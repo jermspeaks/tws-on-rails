@@ -2,11 +2,13 @@
   <%= render partial: 'shared/nav_header' %>
   <% prefill = !!current_user %>
   <div class="mobilepad edit-tea-time" %>
-    <h2 class="admin-head">Edit tea time details</h2>
-    <div class="controls actions">
-      <%= link_to 'Cancel tea time', @tea_time, method: :delete, data: {conform: 'Are you sure?' }, class: 'cancel-button' %>
-    </div>
+    <h2 class="admin-head">
+      Edit tea time details
+    </h2>
     <%= render 'form' %>
+    <div class="controls">
+      <h6 ><%= link_to 'Cancel tea time', @tea_time, method: :delete, data: {conform: 'Are you sure?' } %></h6>
+    </div>
   </div>
 
   <div class="edit-tea-time">
