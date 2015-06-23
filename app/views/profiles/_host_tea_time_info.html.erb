@@ -15,10 +15,10 @@
             </h3>
             <% if tea_time.attendances.length > 0 %>
               <% tea_time.attendances.group_by(&:status).each do |k,v| %>
+                <h6 class="capitalize boldweight">
+                  <%= humanize_attendance_status(k).humanize.titleize.pluralize(v.count) %>
+                </h6>
                 <ul class="<%= k %> attendees-list">
-                  <h4>
-                    #{humanize_attendance_status(k).humanize.titleize.pluralize(v.count)}
-                  </h4>
                   <% v.map(&:user).each do |a| %>
                     <li class="attendee-names">
                       <%= link_to a.name, "mailto:#{a.email}" %>
